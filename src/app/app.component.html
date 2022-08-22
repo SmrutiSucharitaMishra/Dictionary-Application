@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  ></button>
+  <span>Dictionary Application</span>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+
+<div class="main">
+  <form #wordForm="ngForm" (submit)="onSubmit(wordForm)" class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Write The Word Here.</mat-label>
+      <input name="word" ngModel matInput placeholder="Ex. Pizza" />
+    </mat-form-field>
+    <button
+      class="search"
+      mat-raised-button
+      color="accent"
+      aria-label="Example icon button with a menu icon"
+    >
+      <mat-icon>search</mat-icon> Search
+    </button>
+  </form>
+  <div *ngFor="let meaning of wordMeaning" class="meaning">
+    <p>{{ meaning }}</p>
+  </div>
+</div>
